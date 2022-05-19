@@ -1,1 +1,0 @@
-[{"hola":"hola"},{"id":"18","nombre":"Luis","descripcion":"descripcion","codigo":"33","foto":"foto","precio":999999,"stock":"stock","timeStamp":1650967008136},{"id":"19","nombre":"Jose","descripcion":"descripcion","codigo":"codigo","foto":"foto","precio":"6666","stock":"stock","timeStamp":1651161531270}]
