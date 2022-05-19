@@ -4,9 +4,9 @@ const admin = require("firebase-admin");
 class CRUDFire {
 
 
-async saveProduct(nombre,descripcion,codigo,foto,precio,stock){ 
+async save(obj){ 
      const db = admin.firestore();
- 
+ console.log(obj)
  try{
      
         
@@ -18,15 +18,7 @@ async saveProduct(nombre,descripcion,codigo,foto,precio,stock){
      }
 
      const docRef = db.collection('Productos').doc(`${id}`);
-     await docRef.set({
-       nombre:  nombre,
-       descripcion: descripcion,
-       codigo: codigo,
-       foto: foto,
-       precio: precio,
-       stock: stock, 
-       timestamp: new Date().toISOString()
-     });
+     await docRef.set(obj);
     
   this.readAll();
 }catch(error){ 
@@ -71,10 +63,12 @@ async readAll(id){
 }
 
 
+ async deleteById(id){ 
+   console.log(`de prueba nos mas ${id}`)
+ }
 
 
-
-  async  Delete() {
+  async  delete() {
     const db = admin.firestore();
     try{
     const query = db.collection('Productos')

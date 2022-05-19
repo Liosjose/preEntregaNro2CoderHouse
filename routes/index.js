@@ -31,15 +31,23 @@ router.post('/productos', (req, res)=> {
 })
 
 
-router.delete('/productos/:id', (req, res)=> { 
+router.delete('/productos/:id?', (req, res)=> { 
+     let id =req.params.id
      
-     let id = req.params.id;
+     if(id){
+          (async () => {
+               const data = await productos.deleteById();
+               return res.send(`${data}`); // 
+           })();    
+     }else {
+     
+     
 
      (async () => {
-          const data = await productos.deleteById(id);
+          const data = await productos.delete(id);
           return res.send(`${data}`); // 
       })();
-     
+     }
 
 })
 
