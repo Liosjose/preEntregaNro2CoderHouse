@@ -1,6 +1,9 @@
-const { initializeApp, applicationDefault, cert } = require('firebase-admin/app');
-const { getFirestore, Timestamp, FieldValue } = require('firebase-admin/firestore');
-const {CRUD}= require ('../contenedor/ContenedorFireBase')
+const { initializeApp, cert } = require('firebase-admin/app');
+const { getFirestore} = require('firebase-admin/firestore');
+const {CRUDFire}= require ('../contenedor/firebase/ContenedorFireBaseProductos')
+const CRUD = new CRUDFire;
+const {carritoFire} = require('../contenedor/firebase/ContenedorCarrito')
+const CRUDcarritoFire = new carritoFire()
 
 const admin = require("firebase-admin");
 
@@ -14,10 +17,10 @@ async function connectFire() {
           });
           
           const db = getFirestore();
+         console.log('Conectado a Fire Base')
           
-          console.log('Conectado a Fire Base')
-          CRUD()
-
+     
+          
 
 }catch(error){
      console.log(`algo paso ${error}`)

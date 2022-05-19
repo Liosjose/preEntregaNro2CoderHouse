@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-let {Producto} = require('../contenedor/ContenedorMongo.js')
+let {Producto} = require('../contenedor/mongoDb/ContenedorMongoProducto')
 let creProducto = new Producto()
 
 async function connect(){ 
@@ -13,7 +13,7 @@ async function connect(){
  }
 
 //-----------------PRUEBAS----------/
-//creProducto.insertarProducto('f','f',45344,'f',3,4)
+//creProducto.saveProduct('f','f',45344,'f',3,4)
 //insertarProducto('f','f',453,'f',3,4)
 //buscarTodo()
 //buscarCodigo(4)

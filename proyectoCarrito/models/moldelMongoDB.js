@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-
+// ------------------------PRODUCTO ------------------------------------//
 const ProductSchema = new Schema({
  
   nombre: {type: String, required:true},
@@ -14,21 +14,7 @@ const ProductSchema = new Schema({
 
 const Productos = mongoose.model("Productos", ProductSchema);
 
-
-// ------------------------CARRITO ------------------------------------//
-
-const carritoSchema = new Schema({
- 
-  id: {type: String, required:true},
-  timestamps: {type : Date, default: Date.now },
-  productos: { default: [] }
-  
-});
-
-const Carrito = mongoose.model("Carrito", carritoSchema);
+// --------------------------------------------------------------------//
 
 
-
-
-// Export the Article model
-module.exports = {Productos, Carrito};
+module.exports = {Productos,ProductSchema};
